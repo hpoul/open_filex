@@ -1,7 +1,6 @@
 import 'dart:async';
-import 'package:open_filex/src/common/open_result.dart';
 
-import 'web.dart' as web;
+import 'package:open_filex/src/common/open_result.dart';
 
 /// OpenFilex class
 class OpenFilex {
@@ -13,9 +12,6 @@ class OpenFilex {
       String? uti,
       String linuxDesktopName = "xdg",
       bool linuxByProcess = false}) async {
-    final b = await web.open("file://$filePath");
-    return OpenResult(
-        type: b ? ResultType.done : ResultType.error,
-        message: b ? "done" : "there are some errors when open $filePath");
+    return OpenResult(type: ResultType.error, message: 'Unsupported.');
   }
 }
